@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "2ccb738b-f5ad-4b1d-b49b-71eb86201373",
+		"name": "Dh Duckling Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5259258"
+	},
+	"item": [
+		{
+			"name": "Warehouse Services",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dh/warehouse/duckling",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dh",
+								"warehouse",
+								"duckling"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"color\": \"Verde\",\r\n\"size\": \"XLarge\",\r\n\"price\": 50,\r\n\"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dh/warehouse/duckling",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dh",
+								"warehouse",
+								"duckling"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 1,\r\n\"color\": \"Rojo\",\r\n\"size\": \"Medium\",\r\n\"price\": 50,\r\n\"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dh/warehouse/duckling",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dh",
+								"warehouse",
+								"duckling"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dh/warehouse/duckling/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dh",
+								"warehouse",
+								"duckling",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store Services",
+			"item": [
+				{
+					"name": "ProcessOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"color\": \"Amarillo\",\r\n\"size\": \"XLarge\",\r\n\"ducklingQuantity\": 250,\r\n\"destinationCountry\": \"India\",\r\n\"shippingMethod\": \"Tierra\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dh/store/duckling/processOrder",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dh",
+								"store",
+								"duckling",
+								"processOrder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

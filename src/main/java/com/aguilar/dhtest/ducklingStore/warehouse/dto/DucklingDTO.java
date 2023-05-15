@@ -1,5 +1,6 @@
 package com.aguilar.dhtest.ducklingStore.warehouse.dto;
 
+import com.aguilar.dhtest.ducklingStore.common.utils.ValueList;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -7,9 +8,6 @@ import lombok.experimental.SuperBuilder;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @SuperBuilder
 @AllArgsConstructor
@@ -30,17 +28,14 @@ public class DucklingDTO implements Serializable{
     private Integer quantity;
 
 
-
     @JsonIgnore
     public List<String> getInvalidFields() {
         List<String> fields = new ArrayList<>();
-        Set<String> validColors = Stream.of("Rojo", "Verde", "Amarillo", "Negro").collect(Collectors.toSet());
-        Set<String> validSizes = Stream.of("XLarge", "Large", "Medium", "Small", "XSmall").collect(Collectors.toSet());
 
-        if (!validColors.contains(this.color)) {
+        if (this.color == null || !ValueList.validColors.contains(this.color.toUpperCase().trim())) {
             fields.add("Color");
         }
-        if (!validSizes.contains(this.size)) {
+        if (this.size == null || !ValueList.validSizes.contains(this.size.toUpperCase().trim())) {
             fields.add("Tamaño");
         }
         if (this.price <= 0) {

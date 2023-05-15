@@ -13,4 +13,6 @@ public interface DucklingRepository extends JpaRepository<DucklingEntity,Long> {
     Optional<DucklingEntity> findByIdAndIsDeleted(Long id, Boolean isDeleted);
 
     DucklingEntity findByPriceAndColorAndSizeAndIsDeleted(Double price, String color, String size, Boolean isDeleted);
+
+    DucklingEntity findByColorAndSizeAndIsDeleted(String color, String size, Boolean isDeleted);
 }
